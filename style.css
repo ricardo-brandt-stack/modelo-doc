@@ -1,0 +1,307 @@
+:root {
+    --bg-app: #0f172a;
+    --panel-bg: #1e293b;
+    --border-color: #334155;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --accent: #059669;
+    --accent-hover: #047857;
+    --input-bg: #0f172a;
+}
+
+body.light-theme {
+    --bg-app: #f1f5f9;
+    --panel-bg: #ffffff;
+    --border-color: #cbd5e1;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --input-bg: #f8fafc;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-app);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+
+/* LAYOUT SPLIT */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* PAINEL LATERAL */
+.form-panel {
+    width: 420px;
+    background-color: var(--panel-bg);
+    border-right: 1px solid var(--border-color);
+    padding: 20px;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+}
+
+.form-panel h2 {
+    font-size: 1.25rem;
+}
+
+.subtitle {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+}
+
+.btn-theme {
+    background: var(--input-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-main);
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 16px;
+}
+
+legend {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 0 6px;
+}
+
+label {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 8px 0 4px;
+}
+
+input[type="text"], textarea, input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--input-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    color: var(--text-main);
+    font-size: 0.85rem;
+    outline: none;
+}
+
+input[type="text"]:focus, textarea:focus {
+    border-color: var(--accent);
+}
+
+.btn-print {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--accent);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-print:hover {
+    background-color: var(--accent-hover);
+}
+
+/* PAINEL DE VISUALIZAÇÃO A4 NORMAS ABNT */
+.preview-panel {
+    flex: 1;
+    padding: 30px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    background-color: #334155;
+}
+
+.a4-page {
+    width: 210mm;
+    min-height: 297mm;
+    /* MARGENS OFICIAIS ABNT: Sup: 2.0cm, Esq: 3.0cm, Dir: 1.5cm, Inf: 2.0cm */
+    padding: 20mm 15mm 20mm 30mm;
+    background-color: #ffffff;
+    color: #000000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 12pt;
+    line-height: 1.25; /* Espaçamento simples a 1.25 ABNT */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* CABEÇALHO INSTITUCIONAL */
+.doc-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-bottom: 1.5pt solid #000;
+    padding-bottom: 8pt;
+    margin-bottom: 18pt; /* Espaço para início do expediente */
+}
+
+.logo-container {
+    margin-bottom: 6pt;
+}
+
+.logo-container img {
+    max-width: 65px;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+.header-text {
+    width: 100%;
+}
+
+.h-line1 { font-size: 11pt; font-weight: bold; text-transform: uppercase; line-height: 1.15; }
+.h-line2 { font-size: 12.5pt; font-weight: bold; text-transform: uppercase; line-height: 1.15; }
+.h-line3 { font-size: 10pt; font-weight: bold; text-transform: uppercase; line-height: 1.15; }
+.h-line4 { font-size: 8.5pt; font-weight: bold; text-transform: uppercase; color: #222; line-height: 1.15; }
+
+/* LINHA EXPEDIENTE + CIDADE/DATA EM LADOS OPOSTOS */
+.doc-meta-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 14pt;
+    font-size: 12pt;
+}
+
+.doc-number {
+    font-weight: bold;
+}
+
+.doc-date {
+    font-size: 12pt;
+}
+
+.doc-subject-row {
+    margin-bottom: 14pt;
+    font-size: 12pt;
+}
+
+.doc-recipient {
+    margin-bottom: 14pt;
+    font-size: 12pt;
+    line-height: 1.2;
+}
+
+.strong-text { font-weight: bold; }
+
+.doc-salutation {
+    margin-bottom: 14pt;
+    font-size: 12pt;
+}
+
+/* CORPO DO TEXTO (ENTRELINHAS E RECUO DE PARÁGRAFO) */
+.doc-body {
+    text-align: justify;
+    text-justify: inter-word;
+    flex: 1;
+    font-size: 12pt;
+}
+
+.doc-body p {
+    margin-bottom: 10pt;
+    text-indent: 2.5cm; /* Recuo padrão ABNT / Redação Oficial */
+    line-height: 1.3;
+}
+
+/* FECHAMENTO E ASSINATURA */
+.doc-closing-section {
+    margin-top: 18pt;
+    page-break-inside: avoid;
+}
+
+.doc-closing {
+    font-size: 12pt;
+    text-indent: 2.5cm; /* Alinhado ao mesmo recuo do parágrafo */
+    margin-bottom: 36pt; /* Espaço para assinatura */
+}
+
+.doc-signature-block {
+    text-align: center;
+}
+
+.signature-tag {
+    font-size: 9pt;
+    color: #444;
+    font-style: italic;
+    margin-bottom: 3pt;
+}
+
+.signer-name {
+    font-size: 12pt;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.signer-title {
+    font-size: 10pt;
+}
+
+/* RODAPÉ INSTITUCIONAL ABNT (FONTE 8pt a 10pt) */
+.doc-footer {
+    border-top: 1pt solid #666;
+    padding-top: 4pt;
+    margin-top: 18pt;
+    text-align: center;
+    font-size: 8.5pt;
+    color: #333;
+    line-height: 1.2;
+}
+
+/* IMPRESSÃO / PDF NATIVO A4 */
+@media print {
+    @page {
+        size: A4 portrait;
+        margin: 20mm 15mm 20mm 30mm; /* Margens ABNT nativas da impressora */
+    }
+
+    body {
+        background: #fff !important;
+        padding: 0 !important;
+    }
+
+    .form-panel {
+        display: none !important;
+    }
+
+    .preview-panel {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .a4-page {
+        box-shadow: none !important;
+        width: 100% !important;
+        min-height: 100% !important;
+        padding: 0 !important; /* Respeita a regra @page acima */
+    }
+}

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESCRIBA HUB - Gerador de Ofícios ABNT</title>
+    
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="dark-theme">
+
+<div class="app-layout">
+    <!-- PAINEL DE FORMULÁRIO (ESQUERDA) -->
+    <aside class="form-panel">
+        <div class="header-top">
+            <h2>📝 Gerador de Ofícios</h2>
+            <button id="theme-toggle" class="btn-theme" type="button">🌙 Escuro</button>
+        </div>
+        <p class="subtitle">Preencha os campos para gerar o documento oficial alinhado às normas ABNT.</p>
+        
+        <form id="officio-form">
+            <!-- CABEÇALHO -->
+            <fieldset>
+                <legend>Cabeçalho & Órgão</legend>
+                <label>Logo / Brasão (URL ou Imagem)</label>
+                <input type="file" id="input-logo" accept="image/*">
+
+                <label>Linha 1 (Ente Superior)</label>
+                <input type="text" id="input-line1" value="ESTADO DE SANTA CATARINA">
+
+                <label>Linha 2 (Instituição)</label>
+                <input type="text" id="input-line2" value="POLÍCIA CIVIL">
+
+                <label>Linha 3 (Diretoria / Geral)</label>
+                <input type="text" id="input-line3" value="DELEGACIA-GERAL">
+
+                <label>Linha 4 (Unidade / Delegacia)</label>
+                <input type="text" id="input-line4" value="DIRETORIA DE POLÍCIA DO LITORAL/DPOL/15ªDRP/DPMU CORUPÁ">
+            </fieldset>
+
+            <!-- IDENTIFICAÇÃO DO DOCUMENTO -->
+            <fieldset>
+                <legend>Dados do Documento</legend>
+                <label>Número do Expediente / Ofício</label>
+                <input type="text" id="input-num-oficio" value="OFÍCIO N° 80 RBR/2026">
+
+                <label>Local e Data</label>
+                <input type="text" id="input-local-data" value="Corupá, 14 de agosto de 2026.">
+
+                <label>Assunto</label>
+                <input type="text" id="input-assunto" value="Requisição de dados cadastrais">
+            </fieldset>
+
+            <!-- DESTINATÁRIO -->
+            <fieldset>
+                <legend>Destinatário</legend>
+                <label>Vocativo de Destino</label>
+                <input type="text" id="input-dest-vocativo" value="Ao Responsável,">
+
+                <label>Nome da Empresa / Órgão</label>
+                <input type="text" id="input-dest-nome" value="TELEFÔNICA BRASIL S.A.">
+
+                <label>Setor / Divisão</label>
+                <input type="text" id="input-dest-setor" value="DIVISÃO DE SERVIÇOS ESPECIAIS">
+
+                <label>Endereço Completo</label>
+                <textarea id="input-dest-endereco" rows="2">RUA DR FAUSTO FERRAZ, 172-03º ANDAR - BELA VISTA&#10;CEP 01333-030 – SÃO PAULO/SP</textarea>
+
+                <label>Saudação Inicial</label>
+                <input type="text" id="input-saudacao" value="Prezado Senhor,">
+            </fieldset>
+
+            <!-- CORPO DO TEXTO -->
+            <fieldset>
+                <legend>Conteúdo do Ofício</legend>
+                <label>Texto Principal / Fundamentação</label>
+                <textarea id="input-corpo" rows="8">Visando instruir o BO 421.26.00450, que apura a prática de Estelionato e Associação Criminosa (Art. 171, § 2º-A e Art. 288 do Código Penal, sob a égide da Lei nº 15.397/2026), venho à presença de V. Sa., fundamentado no Art. 2º, § 2º da Lei 12.830/2013 e no Art. 15 da Lei 12.850/2013, REQUISITAR que sejam fornecidos no prazo de 48 (quarenta e oito) horas:
+
+1. DADOS CADASTRAIS COMPLETOS (Nome, CPF, endereço, data de habilitação e forma de pagamento) dos titulares das seguintes linhas telefônicas: (54) 99666-0472; (47) 99293-1684; (54) 99960-9156; (54) 99668-7600;
+
+2. HISTÓRICO DE IMEIS: Fornecer a relação de todos os números de série de aparelhos (IMEIs) que operaram com os referidos terminais no período de 01/01/2026 até 14/08/2026.
+
+3. VÍNCULOS ADICIONAIS: Informar se existem outros terminais (linhas telefônicas) vinculados aos IMEIS e CPFs identificados como titulares das linhas acima ou que tenham sido utilizados nos mesmos aparelhos identificados.
+
+As informações devem ser encaminhadas com a máxima celeridade ao e-mail institucional: ricardo-brandt@pc.sc.gov.br fazendo referência ao número deste expediente.
+
+Ressalto que o descumprimento desta requisição ou o retardamento injustificado sujeita o responsável às sanções administrativas e penais cabíveis.</textarea>
+            </fieldset>
+
+            <!-- ASSINATURA -->
+            <fieldset>
+                <legend>Assinatura & Fechamento</legend>
+                <label>Fechamento / Cumprimento Final</label>
+                <input type="text" id="input-fechamento" value="Atenciosamente,">
+
+                <label>Selo / Indicador de Assinatura</label>
+                <input type="text" id="input-selo-assinatura" value="(assinado digitalmente)">
+
+                <label>Nome do Subscritor</label>
+                <input type="text" id="input-nome-subscritor" value="LUIZ CARLOS GROSS">
+
+                <label>Cargo / Função</label>
+                <input type="text" id="input-cargo-subscritor" value="Delegado de Polícia">
+            </fieldset>
+
+            <!-- RODAPÉ -->
+            <fieldset>
+                <legend>Rodapé Institucional</legend>
+                <label>Endereço Físico</label>
+                <input type="text" id="input-rodape-end" value="Rua Francisco Mees, nº 479, Bairro Centro - CEP: 89.278-000 - Corupá/SC">
+
+                <label>Contatos & Site</label>
+                <input type="text" id="input-rodape-contato" value="Telefone: (47) 3276-9480 E-mail: dpcorupa@pc.sc.gov.br - Site: www.policiacivil.sc.gov.br">
+            </fieldset>
+
+            <button type="button" id="btn-print" class="btn-print">🖨️ Imprimir / Salvar em PDF</button>
+        </form>
+    </aside>
+
+    <!-- PREVISÃO EM TEMPO REAL (DIREITA) -->
+    <main class="preview-panel">
+        <div class="a4-page" id="document-preview">
+            
+            <!-- CABEÇALHO COM LOGO ACIMA -->
+            <header class="doc-header">
+                <div class="logo-container">
+                    <img id="view-logo" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='60' height='70' viewBox='0 0 60 70'><rect width='60' height='70' fill='%23334155'/><text x='50%' y='50%' fill='%23ffffff' font-size='10' text-anchor='middle' alignment-baseline='middle'>LOGOTIPO</text></svg>" alt="Logo Institucional">
+                </div>
+                <div class="header-text">
+                    <div id="view-line1" class="h-line1">ESTADO DE SANTA CATARINA</div>
+                    <div id="view-line2" class="h-line2">POLÍCIA CIVIL</div>
+                    <div id="view-line3" class="h-line3">DELEGACIA-GERAL</div>
+                    <div id="view-line4" class="h-line4">DIRETORIA DE POLÍCIA DO LITORAL/DPOL/15ªDRP/DPMU CORUPÁ</div>
+                </div>
+            </header>
+
+            <!-- META: NÚMERO DO OFÍCIO E DATA NA MESMA LINHA -->
+            <section class="doc-meta-row">
+                <div id="view-num-oficio" class="doc-number">OFÍCIO N° 80 RBR/2026</div>
+                <div id="view-local-data" class="doc-date">Corupá, 14 de agosto de 2026.</div>
+            </section>
+
+            <!-- ASSUNTO -->
+            <section class="doc-subject-row">
+                <div class="doc-subject"><strong>Assunto:</strong> <span id="view-assunto">Requisição de dados cadastrais</span></div>
+            </section>
+
+            <!-- DESTINATÁRIO -->
+            <section class="doc-recipient">
+                <div id="view-dest-vocativo">Ao Responsável,</div>
+                <div id="view-dest-nome" class="strong-text">TELEFÔNICA BRASIL S.A.</div>
+                <div id="view-dest-setor">DIVISÃO DE SERVIÇOS ESPECIAIS</div>
+                <div id="view-dest-endereco">RUA DR FAUSTO FERRAZ, 172-03º ANDAR - BELA VISTA<br>CEP 01333-030 – SÃO PAULO/SP</div>
+            </section>
+
+            <!-- SAUDAÇÃO -->
+            <section class="doc-salutation">
+                <div id="view-saudacao">Prezado Senhor,</div>
+            </section>
+
+            <!-- CORPO DO TEXTO -->
+            <section id="view-corpo" class="doc-body">
+                <!-- Conteúdo formatado via JS -->
+            </section>
+
+            <!-- FECHAMENTO ALINHADO AO PARÁGRAFO + BLOCO DE ASSINATURA -->
+            <section class="doc-closing-section">
+                <div id="view-fechamento" class="doc-closing">Atenciosamente,</div>
+                
+                <div class="doc-signature-block">
+                    <div id="view-selo-assinatura" class="signature-tag">(assinado digitalmente)</div>
+                    <div id="view-nome-subscritor" class="signer-name">LUIZ CARLOS GROSS</div>
+                    <div id="view-cargo-subscritor" class="signer-title">Delegado de Polícia</div>
+                </div>
+            </section>
+
+            <!-- RODAPÉ INSTITUCIONAL -->
+            <footer class="doc-footer">
+                <div id="view-rodape-end">Rua Francisco Mees, nº 479, Bairro Centro - CEP: 89.278-000 - Corupá/SC</div>
+                <div id="view-rodape-contato">Telefone: (47) 3276-9480 E-mail: dpcorupa@pc.sc.gov.br - Site: www.policiacivil.sc.gov.br</div>
+            </footer>
+
+        </div>
+    </main>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
