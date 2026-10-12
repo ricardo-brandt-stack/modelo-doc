@@ -64,7 +64,7 @@
                 <input type="text" id="input-dest-setor" value="DIVISÃO DE SERVIÇOS ESPECIAIS">
 
                 <label>Endereço Completo</label>
-                <textarea id="input-dest-endereco" rows="2">RUA DR FAUSTO FERRAZ, 172-03º ANDAR - BELA VISTA&#10;CEP 01333-030 – SÃO PAULO/SP</textarea>
+                <textarea id="input-dest-endereco" rows="2">DADOS DO DESTINATÁRIO</textarea>
 
                 <label>Saudação Inicial</label>
                 <input type="text" id="input-saudacao" value="Prezado Senhor,">
@@ -74,17 +74,7 @@
             <fieldset>
                 <legend>Conteúdo do Ofício</legend>
                 <label>Texto Principal / Fundamentação</label>
-                <textarea id="input-corpo" rows="8">Visando instruir o BO 421.26.00450, que apura a prática de Estelionato e Associação Criminosa (Art. 171, § 2º-A e Art. 288 do Código Penal, sob a égide da Lei nº 15.397/2026), venho à presença de V. Sa., fundamentado no Art. 2º, § 2º da Lei 12.830/2013 e no Art. 15 da Lei 12.850/2013, REQUISITAR que sejam fornecidos no prazo de 48 (quarenta e oito) horas:
-
-1. DADOS CADASTRAIS COMPLETOS (Nome, CPF, endereço, data de habilitação e forma de pagamento) dos titulares das seguintes linhas telefônicas: (54) 99666-0472; (47) 99293-1684; (54) 99960-9156; (54) 99668-7600;
-
-2. HISTÓRICO DE IMEIS: Fornecer a relação de todos os números de série de aparelhos (IMEIs) que operaram com os referidos terminais no período de 01/01/2026 até 14/08/2026.
-
-3. VÍNCULOS ADICIONAIS: Informar se existem outros terminais (linhas telefônicas) vinculados aos IMEIS e CPFs identificados como titulares das linhas acima ou que tenham sido utilizados nos mesmos aparelhos identificados.
-
-As informações devem ser encaminhadas com a máxima celeridade ao e-mail institucional: ricardo-brandt@pc.sc.gov.br fazendo referência ao número deste expediente.
-
-Ressalto que o descumprimento desta requisição ou o retardamento injustificado sujeita o responsável às sanções administrativas e penais cabíveis.</textarea>
+                <textarea id="input-corpo" rows="8"> ESCREVA O CORPO DO OFICIO</textarea>
             </fieldset>
 
             <!-- ASSINATURA -->
@@ -130,32 +120,32 @@ Ressalto que o descumprimento desta requisição ou o retardamento injustificado
                     <div id="view-line1" class="h-line1">ESTADO DE SANTA CATARINA</div>
                     <div id="view-line2" class="h-line2">POLÍCIA CIVIL</div>
                     <div id="view-line3" class="h-line3">DELEGACIA-GERAL</div>
-                    <div id="view-line4" class="h-line4">DIRETORIA DE POLÍCIA DO LITORAL/DPOL/15ªDRP/DPMU CORUPÁ</div>
+                    <div id="view-line4" class="h-line4">NOME DA DELEGACIA</div>
                 </div>
             </header>
 
             <!-- META: NÚMERO DO OFÍCIO E DATA NA MESMA LINHA -->
             <section class="doc-meta-row">
-                <div id="view-num-oficio" class="doc-number">OFÍCIO N° 80 RBR/2026</div>
-                <div id="view-local-data" class="doc-date">Corupá, 14 de agosto de 2026.</div>
+                <div id="view-num-oficio" class="doc-number">NUMERO DO OFICIO</div>
+                <div id="view-local-data" class="doc-date">LOCAL, DIA de MES de ANO.</div>
             </section>
 
             <!-- ASSUNTO -->
             <section class="doc-subject-row">
-                <div class="doc-subject"><strong>Assunto:</strong> <span id="view-assunto">Requisição de dados cadastrais</span></div>
+                <div class="doc-subject"><strong>Assunto:</strong> <span id="view-assunto">ASSUNTO</span></div>
             </section>
 
             <!-- DESTINATÁRIO -->
             <section class="doc-recipient">
                 <div id="view-dest-vocativo">Ao Responsável,</div>
-                <div id="view-dest-nome" class="strong-text">TELEFÔNICA BRASIL S.A.</div>
-                <div id="view-dest-setor">DIVISÃO DE SERVIÇOS ESPECIAIS</div>
-                <div id="view-dest-endereco">RUA DR FAUSTO FERRAZ, 172-03º ANDAR - BELA VISTA<br>CEP 01333-030 – SÃO PAULO/SP</div>
+                <div id="view-dest-nome" class="strong-text">EMPRESA DESTINATARIA</div>
+                <div id="view-dest-setor">SETOR</div>
+                <div id="view-dest-endereco">ENDEREÇO DESTINATARIO</div>
             </section>
 
             <!-- SAUDAÇÃO -->
             <section class="doc-salutation">
-                <div id="view-saudacao">Prezado Senhor,</div>
+                <div id="view-saudacao">VOCATIVO,</div>
             </section>
 
             <!-- CORPO DO TEXTO -->
@@ -165,19 +155,19 @@ Ressalto que o descumprimento desta requisição ou o retardamento injustificado
 
             <!-- FECHAMENTO ALINHADO AO PARÁGRAFO + BLOCO DE ASSINATURA -->
             <section class="doc-closing-section">
-                <div id="view-fechamento" class="doc-closing">Atenciosamente,</div>
+                <div id="view-fechamento" class="doc-closing">SAUDAÇÃO,</div>
                 
                 <div class="doc-signature-block">
                     <div id="view-selo-assinatura" class="signature-tag">(assinado digitalmente)</div>
-                    <div id="view-nome-subscritor" class="signer-name">LUIZ CARLOS GROSS</div>
-                    <div id="view-cargo-subscritor" class="signer-title">Delegado de Polícia</div>
+                    <div id="view-nome-subscritor" class="signer-name">NOME</div>
+                    <div id="view-cargo-subscritor" class="signer-title">CARGO</div>
                 </div>
             </section>
 
             <!-- RODAPÉ INSTITUCIONAL -->
             <footer class="doc-footer">
-                <div id="view-rodape-end">Rua Francisco Mees, nº 479, Bairro Centro - CEP: 89.278-000 - Corupá/SC</div>
-                <div id="view-rodape-contato">Telefone: (47) 3276-9480 E-mail: dpcorupa@pc.sc.gov.br - Site: www.policiacivil.sc.gov.br</div>
+                <div id="view-rodape-end">ENDEREÇO DO REMETENTE</div>
+                <div id="view-rodape-contato">Telefone: ________ E-mail: ________ - Site: www.policiacivil.sc.gov.br</div>
             </footer>
 
         </div>
